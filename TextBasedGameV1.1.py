@@ -16,6 +16,9 @@ rooms = {
 # This function captures the player's name, and displays a welcome message
 def intro():
     player_name = input('Enter Your Name: ').lower()
+    while player_name == '':
+        print("Player name can't be blank. Please Enter Your Name")
+        player_name = input('Enter Your Name: ').lower()
     print('Welcome' + ' ' + player_name.title() + '!')
     print("In the depths of your slumber, a cloth smothers your face, stealing consciousness."
           "\nAbruptly awakened, you find yourself trapped in a chilling room reeking of chemicals."
@@ -30,6 +33,7 @@ def commands():
     print('Move commands: south, north, east, west')
     print('Add to Inventory: get "[item name]"')
     print('Enter "exit" to leave')
+
 
 # This function tells the player the current room they are in, displays their current inventory, and displays
 # the item in the current room
